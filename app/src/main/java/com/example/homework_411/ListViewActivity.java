@@ -44,7 +44,13 @@ public class ListViewActivity extends AppCompatActivity {
         listContentAdapter = createAdapter(values);
         list.setAdapter(listContentAdapter);
         add = findViewById(R.id.add);
-        addItem();
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addItem();
+            }
+        });
+
     }
 
     private void addItem() {
