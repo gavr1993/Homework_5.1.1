@@ -9,30 +9,30 @@
         android:id="@+id/edtx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:clickable="true"
         android:ems="10"
         android:hint="@string/authorHint"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/add"
-        android:autofillHints="" />
+        app:layout_constraintEnd_toStartOf="@id/add" />
 
     <ImageButton
         android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
         android:contentDescription="@string/add"
         android:src="@android:drawable/ic_input_add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-                />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="500dp"
         android:nestedScrollingEnabled="true"
         tools:listitem="@layout/double_text">
-
     </ListView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
