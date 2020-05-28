@@ -33,11 +33,6 @@ public class ListViewActivity extends AppCompatActivity {
 
     private BaseAdapter listContentAdapter;
 
-
-    private ListViewActivity() {
-        listContentAdapter = null;
-    }
-
     private ImageButton add;
 
     @Override

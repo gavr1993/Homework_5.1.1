@@ -13,15 +13,18 @@
         android:hint="@string/authorHint"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/add" />
+        app:layout_constraintEnd_toStartOf="@id/add"
+        android:autofillHints="" />
 
     <ImageButton
         android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/add"
+        android:src="@android:drawable/ic_input_add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+                />
 
     <ListView
         android:id="@+id/list"
