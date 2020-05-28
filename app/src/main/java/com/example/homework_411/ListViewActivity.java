@@ -32,7 +32,7 @@ public class ListViewActivity extends AppCompatActivity {
     private List<Map<String, String>> values;
 
     private BaseAdapter listContentAdapter;
-    final ListView list = findViewById(R.id.list);
+
 
     private ListViewActivity() {
         listContentAdapter = null;
@@ -44,7 +44,7 @@ public class ListViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
-
+        final ListView list = findViewById(R.id.list);
         values = prepareContent();
         listContentAdapter = createAdapter(values);
         list.setAdapter(listContentAdapter);
@@ -55,8 +55,12 @@ public class ListViewActivity extends AppCompatActivity {
     private void addItem() {
         EditText edtx = findViewById(R.id.edtx);
         String author = String.valueOf(edtx.getText());
-        
-           }
+        Map<String, String> map = new HashMap<>();
+        map.put("key_text", author);
+        map.put("key_count", author.length() + "");
+        values.add(map);
+        listContentAdapter.notifyDataSetChanged();
+    }
 
     private File getValuesFile() {
         return new File(getExternalFilesDir(null), STORAGE_FILE);
@@ -123,6 +127,7 @@ public class ListViewActivity extends AppCompatActivity {
             }
         }
     }
+
     public static List<Map<String, String>> loadFromFile(File file, String key1, String key2) {
         List<Map<String, String>> result = new ArrayList<>();
         BufferedReader reader = null;
